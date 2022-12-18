@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+
+<body>  
+    <div id="background-1">
+    <h1 class="main title" id="main-title"> Crypto.Beginner </h1>
+  </div>
+  <nav class="navbar bg-secondary">
+    <div class="container-fluid">
+        <a class="navbar-brand nav-item text-dark" id="home-link">HOME</a>
+
+        <ul class="navbar-nav me-auto d-flex flex-row">
+            <li class="nav-item me-4">
+                <a class="text-dark nav-link" href="#" id="crypto-link">CRYPTO</a>
+            </li>
+            <li class="nav-item ">
+                <a class="text-dark nav-link" href="#" id="mktvalue-link">MARKET VALUE</a>
+            </li>
+        </ul>
+
+        <form class="d-flex" id="search-form">
+            <input class="form-control" type="text" placeholder="BLOCKCHAINS eg. Ethereum" id="search"/>
+            <button class="btn btn-outline-info ms-1" id="searchBtn">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container mt-5" id="main-container">
+
+    <div class="row" id="Crypto"> 
+
+  
+    <!-- <p class="blockchain" id="block-def"> </p> -->
+    <h2 class="blockchain head 2" id="block-head2">What is Blockchain for beginners?</h2>
+
+    <p class="blockcahin desc" id="block-desc"> On the surface Blockchain technology seems impossible to understand, with
+        any definition typically accompanied by a load of jargon. However, if we take a
+        step back and look at Blockchain technology in simple terms, it becomes far
+        easier to grasp.
+    
+        The Blockchain is a database that gets distributed to every computer on the
+        network, instead of connecting to a central server. This is advantageous be-
+        cause it makes the Blockchain near-impossible to take down. The database
+        contains the data from every transaction that takes place on a network, every
+        time a new transaction occurs it gets added to the database.
+        These lists of transactions are separated into manageable “blocks”, which
+        each contain a transaction timestamp and a link to the previous block. Be
+        cause each block has to be validated by every computer on the network, it
+        makes it impossible to falsify a transaction, resulting in a tamper-proof ledger
+        containing every transaction to ever take place.    
+    </p>
+    <h3 class="blockchain head 3" id="block-head3">What you are getting yourself into for beginners?</h3>
+    <ol>
+        <li> Volatility</li>
+        <li> Emotions</li>
+        <li> Market movements</li>
+    </ol>
+   
+    <h4 class="blockchain head 4" id="block-head4">1. Volatility</h4>
+    <p class="blockchain vol">(Def) Volatility - Volatility is a measure of how much the price of an asset has moved up or down over time. 
+        Generally, the more volatile an asset is, the riskier its considered to be as an investment 
+        — and the more potential it has to offer either higher returns or higher losses over shorter periods of 
+        time than comparatively less volatile assets.
+
+        -I won't get much into this cause it involves some technicallity and this is for beginners so I will let you have some fun with other databases on this! 
+    </p>
+
+    <h5 class="blockchain head 5" id="block-head5">2. Emotions</h5>
+    <p class="blockchain emo" id="block-emo">
+        In cryptocurrency, managing your emotions well can be the difference be-
+        tween making thousands and losing everything. Every trader goes through a
+        cycle of emotions, when everything is green and the market is in your favour
+        you’ll become elated and euphoric, when it begins to drop anxiety and fear start
+        to take hold, culminating and intensifying as the price continues to fall until you
+        reach the and find anger and despair.
+        
+        Where along this cycle would you sell? You might be thinking “just as anx-
+        iety and fear take hold”, after all, this would shield you from any large losses. In
+        reality, that’s already far too late, it’s better to sell at peak happiness, right when
+        your investments are hitting all-time highs.
+        
+        A period of extreme growth is almost always followed by a dip, which
+        would allow you to buy back in, increasing your position size. Once you master
+        your emotions you can trade without bias, putting you on the path to becoming
+        a professional trader.</p>
+   
+        <h6 class="blockchain head 6" id="block-head6">3. Market movements</h6>
+        <p class="blockchain mov" id="block-mov">
+            There’s a lot of volatility in the cryptocurrency market, however, it’s rarely
+without reason. Once you begin to understand what causes these wild swings,
+you’re well on your way to becoming an expert trader! To help you better un-
+derstand some of the contributing factors, we’ve broken the main ones below;
+<ul>
+<li> 1.Supply and demand</li>
+ <li>2.Bad press</li>
+ <li>3.Integration</li>
+ <li>4.Events</li> 
+</li>
+   </ul>
+        </p>
+
+      </div>
+
+    <div class="row mt-3 mb-3" id="coin-list" >
+        <h3>CRYPTO LIST</h3>
+    </div>
+
+    <div class="row mt-3 mb-3" id="market-value" hidden>
+        <h3>EXCHANGE</h3>
+    </div>
+
+    <div class="row mt-3 mb-3" id="search-result" hidden>
+        <h3>SEARCH RESULTS</h3>
+    </div>
+
+
+</div>
+
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
