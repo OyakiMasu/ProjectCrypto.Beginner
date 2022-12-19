@@ -1,6 +1,6 @@
 body{
-    background: rgb(86, 223, 204);
-    /* background-color: var(--bs-teal #20c997); */
+    background-color:var(--bs-body-bg white);
+ 
     
 } 
 

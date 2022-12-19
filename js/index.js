@@ -28,8 +28,8 @@ mainPage.addEventListener('click', () => {
   cryptolistLink.style.display = "none"
   cryptoExchanges.style.display = "none"
   searchResults.style.display = "none"
+  homecryptoIntro.removeAttribute("hidden")
   homecryptoIntro.style.display ="flex"
-  homecryptoIntro.removeAttribute("hideen")
 })
 
 //Click event for the crypto list
@@ -87,30 +87,22 @@ searchForm.addEventListener('submit', (e) => {
 
 //Load crypto
 const loadCrypto = () => {
-    fetch(CRYPTO)
-        .then((resp) => resp.json())
-        .then((data) => {
-            const cryptoData = data.data
-            // console.log(cryptoData[0].name)
+  fetch(CRYPTO)
+    .then((resp) => resp.json())
+    .then((data) => {
+    const cryptoData = data.data
+    // console.log(cryptoData[0].name)
            
-            //  const coinsList = cryptoData.map(
-
-            // cat => ( cat.name)
-            // )
-            // document.getElementById('coin-list').append(...coinsList)
-        for(i=0 ;i<cryptoData.length; i++){
-            let cryptoName = document.createElement('ul')
-            cryptoName.innerHTML=
+for(i=0 ;i<cryptoData.length; i++){
+let cryptoName = document.createElement('ul')
+cryptoName.innerHTML=
              `      
-                   <li>Symbol : ${cryptoData[i].symbol}</li> 
-                    <li>Name : ${cryptoData[i].name}</li>
-                    <li>Market value : ${cryptoData[i].priceUsd}$
+<li>Symbol : ${cryptoData[i].symbol}</li> 
+<li>Name : ${cryptoData[i].name}</li>
+<li>Market value : ${cryptoData[i].priceUsd}$
             `
-            cryptoCoins.append(cryptoName)
-            // let cryptoSymbol = document.createElement('ul')
-            // cryptoSymbol.innerHTML = `<li>${cryptoData[i].symbol}</li>`
-            // document.getElementById('coin-list').append(cryptoSymbol)
-
+cryptoCoins.append(cryptoName)
+        
         }
 
         })
@@ -118,41 +110,35 @@ const loadCrypto = () => {
 //load exchange data
 const LoadExchanges = () => {
   fetch(EXCHANGES)
-    .then((resp) => resp.json())
-    .then((data) => 
-      //  console.log(data)
-      {
-      const dataExchange = data
-      //  console.log(dataExchange)
-      for(i=0 ;i<dataExchange.length; i++){
-        let exchangeGen = document.createElement('ul')
-        exchangeGen.innerHTML = 
-        `  <li>Name : ${dataExchange[i].name}</li>
-           <li>Country : ${dataExchange[i].country}</li>
-           
+  .then((resp) => resp.json())
+  .then((data) => 
+  //  console.log(data)
+  {
+  const dataExchange = data
+  //  console.log(dataExchange)
+  for(i=0 ;i<dataExchange.length; i++){
+    let exchangeGen = document.createElement('ul')
+    exchangeGen.innerHTML = 
+        ` <li>Name : ${dataExchange[i].name}</li>
+          <li>Country : ${dataExchange[i].country}</li>
+          <li>Link : ${dataExchange[i].url}</li> 
         `
-        let exchangeImg = document.createElement('img')
-        exchangeImg.src = ` ${dataExchange[i].image}`
-        cryptoExchanges.append(exchangeImg);
-        cryptoExchanges.append(exchangeGen);
-      }
-      // const exchangeElems = dataExchange.map(
-      //   details => (details.name, details.images)
-      //   )
-      // cryptoExchanges.append(exchangeElems)
-      
-
-      })
+    let exchangeImg = document.createElement('img')
+    exchangeImg.className = 'ex-img'
+    exchangeImg.src = ` ${dataExchange[i].image}`
+    cryptoExchanges.append(exchangeImg);
+    cryptoExchanges.append(exchangeGen);
 }
-
+}
+)
+}
 //load Exchange list
 LoadExchanges();
 }    
-
 //Load Crypto list
  loadCrypto();
 
-//load searchBar
+//load searchBar Items
 const blockGen = () => {
   fetch(BLOCKCHAIN)
    .then((resp) => resp.json())
@@ -173,12 +159,10 @@ for(i=0 ;i<chainLoader.length; i++){
   chainImg.src = `${chainLoader[i].top_3_coins}`
   searchResults.append(chainImg)
   searchResults.append(chainGen)
+  
 }
-        
-        })
+})
 }
- 
 //load Blockchain systems
 blockGen();
 })
-

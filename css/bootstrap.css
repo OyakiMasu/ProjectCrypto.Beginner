@@ -10876,3 +10876,13 @@ textarea.form-control-lg {
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+.block-img{
+  max-width: 25%;
+  height: auto;
+
+}
+.ex-img{
+  max-width: 25%;
+}
