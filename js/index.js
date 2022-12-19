@@ -24,13 +24,13 @@ const searchForm = document.getElementById('search-form')
 const searchBox = document.getElementById('search')
 
 //Click event for the landing page
-mainPage.addEventListener('click', () => {
-  cryptolistLink.style.display = "none"
-  cryptoExchanges.style.display = "none"
-  searchResults.style.display = "none"
-  homecryptoIntro.removeAttribute("hidden")
-  homecryptoIntro.style.display ="flex"
-})
+// mainPage.addEventListener('click', () => {
+//   cryptolistLink.style.display = "none"
+//   cryptoExchanges.style.display = "none"
+//   searchResults.style.display = "none"
+//   homecryptoIntro.removeAttribute("hidden")
+//   homecryptoIntro.style.display ="flex"
+// })
 
 //Click event for the crypto list
 cryptolistLink.addEventListener('click', () => {
@@ -159,7 +159,7 @@ for(i=0 ;i<chainLoader.length; i++){
   chainImg.src = `${chainLoader[i].top_3_coins}`
   searchResults.append(chainImg)
   searchResults.append(chainGen)
-  
+
 }
 })
 }
