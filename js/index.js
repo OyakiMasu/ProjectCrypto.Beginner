@@ -1,10 +1,10 @@
 //MY API LINKS
 //1.CRYPTOCURRENCIES
 const CRYPTO = "https://api.coincap.io/v2/assets"
-//2.MARKET VALUE
-const MARKET = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-//3.EXCHANGES
+//2.EXCHANGES
 const EXCHANGES = "https://api.coingecko.com/api/v3/exchanges"
+//3.BLOCKCHAIN
+const BLOCKCHAIN = "https://api.coingecko.com/api/v3/coins/categories"
 
 document.addEventListener('DOMContentLoaded', () => {
 //MY DATA THAT I AM CONSTANTLY CALLING
@@ -23,6 +23,14 @@ const homecryptoIntro = document.getElementById('Crypto')
 const searchForm = document.getElementById('search-form')
 const searchBox = document.getElementById('search')
 
+//Click event for the landing page
+mainPage.addEventListener('click', () => {
+  cryptolistLink.style.display = "none"
+  cryptoExchanges.style.display = "none"
+  searchResults.style.display = "none"
+  homecryptoIntro.style.display ="flex"
+  homecryptoIntro.removeAttribute("hideen")
+})
 
 //Click event for the crypto list
 cryptolistLink.addEventListener('click', () => {
@@ -31,7 +39,7 @@ mainPage.style.display = "none"
   //hide exchanges
 cryptoExchanges.style.display="none"
   //hide search
- searchBox.style.display="none"
+ searchResults.style.display="none"
   //show Crypto List
 cryptoCoins.removeAttribute('hidden')  
 cryptoCoins.style.display= "flex"  
@@ -45,13 +53,37 @@ cryptoCoins.style.display = "none"
 //hide exchanges
 cryptoExchanges.style.display = "none"
 //hide search 
- searchBox.style.display="none"
+ searchResults.style.display="none"
 //show home
 homecryptoIntro.removeAttribute('hidden')
 homecryptoIntro.style.display = "flex"
 
-
 })
+
+//Click event for the exchanges
+exchangeLink.addEventListener('click', () => {
+  //hide main page
+mainPage.style.display="none"
+  //hide crypto list
+cryptoCoins.style.display="none"
+  //hide search
+searchResults.style.display="none"
+//show exchanges
+cryptoExchanges.removeAttribute("hidden")
+cryptoExchanges.style.display="flex"   
+})
+
+//The search bar event for blockchain
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const change = searchBox.value
+  blockGen(change)
+  cryptoCoins.style.display = "none"
+  cryptoExchanges.style.display = "none"
+  searchResults.style.display = "flex"
+  searchResults.removeAttribute('hidden')
+  
+}) 
 
 //Load crypto
 const loadCrypto = () => {
@@ -82,16 +114,71 @@ const loadCrypto = () => {
         }
 
         })
+
+//load exchange data
+const LoadExchanges = () => {
+  fetch(EXCHANGES)
+    .then((resp) => resp.json())
+    .then((data) => 
+      //  console.log(data)
+      {
+      const dataExchange = data
+      //  console.log(dataExchange)
+      for(i=0 ;i<dataExchange.length; i++){
+        let exchangeGen = document.createElement('ul')
+        exchangeGen.innerHTML = 
+        `  <li>Name : ${dataExchange[i].name}</li>
+           <li>Country : ${dataExchange[i].country}</li>
+           
+        `
+        let exchangeImg = document.createElement('img')
+        exchangeImg.src = ` ${dataExchange[i].image}`
+        cryptoExchanges.append(exchangeImg);
+        cryptoExchanges.append(exchangeGen);
+      }
+      // const exchangeElems = dataExchange.map(
+      //   details => (details.name, details.images)
+      //   )
+      // cryptoExchanges.append(exchangeElems)
+      
+
+      })
+}
+
+//load Exchange list
+LoadExchanges();
 }    
-
-
-
-
-
-
 
 //Load Crypto list
  loadCrypto();
 
+//load searchBar
+const blockGen = () => {
+  fetch(BLOCKCHAIN)
+   .then((resp) => resp.json())
+   .then((data) => 
+        {
+        const chainLoader = data
+        // console.log(data)
+for(i=0 ;i<chainLoader.length; i++){
+  let chainGen = document.createElement('ul')
+  chainGen.innerHTML =
+  `
+  <li>Name : ${chainLoader[i].name}</li>
+  <li>Id : ${chainLoader[i].id}</li>
+  <li>Content : ${chainLoader[i].content}</li>
+  `
+  let chainImg = document.createElement('img')
+  chainImg.className = 'block-img'
+  chainImg.src = `${chainLoader[i].top_3_coins}`
+  searchResults.append(chainImg)
+  searchResults.append(chainGen)
+}
+        
+        })
+}
+ 
+//load Blockchain systems
+blockGen();
 })
 
