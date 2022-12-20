@@ -41,8 +41,10 @@
 #### BUGS
 * When the links aren't responding reload the page to return it back to normal.
 
-### PROJECT DONE BY
-   - MATHU ZAKI
+### AUTHOR
+ This project was contributed by :
+   * ZAKI MATHU
+
 
 
 
