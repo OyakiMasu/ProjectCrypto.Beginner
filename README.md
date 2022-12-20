@@ -23,5 +23,12 @@
 * BUG WARNING(If the link for Crypto at the top isn't working the number of times to generate has exceded the number allowed)
 
 ### CRYPTO EXCHANGES
-*
+* When you click on exchange you will load crypto exchanges.
+* The crypto exchanges displayed are the most used starting from the top to the bottom.In terms of exchanges it depends on the trust of the trader and what exchange they want to use.
+* The links will direct you to there main pages
+* The countries listed will help the user what there regions best exchange is .
+
+## BLOCKCHAIN - SEARCH BAR
+
+
    
