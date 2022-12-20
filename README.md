@@ -20,5 +20,8 @@
 * When you click on crypto at the top it will load a list of different crypto currencies from the most known to the least known.
 * It includes the symbol, name and market value
 * Those are the basic fundamentals you need to know as a beginner so that was the only thing I included in the crypto list.
+* BUG WARNING(If the link for Crypto at the top isn't working the number of times to generate has exceded the number allowed)
 
+### CRYPTO EXCHANGES
+*
    
