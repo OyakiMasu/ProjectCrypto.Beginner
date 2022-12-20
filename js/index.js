@@ -6,7 +6,9 @@ const EXCHANGES = "https://api.coingecko.com/api/v3/exchanges"
 //3.BLOCKCHAIN
 const BLOCKCHAIN = "https://api.coingecko.com/api/v3/coins/categories"
 
+//Event listener for what will go in the DOM
 document.addEventListener('DOMContentLoaded', () => {
+
 //MY DATA THAT I AM CONSTANTLY CALLING
 const mainPage = document.getElementById('Crypto')
 const cryptoCoins = document.getElementById('coin-list')
@@ -22,15 +24,6 @@ const homecryptoIntro = document.getElementById('Crypto')
 //Search Engine
 const searchForm = document.getElementById('search-form')
 const searchBox = document.getElementById('search')
-
-//Click event for the landing page
-// mainPage.addEventListener('click', () => {
-//   cryptolistLink.style.display = "none"
-//   cryptoExchanges.style.display = "none"
-//   searchResults.style.display = "none"
-//   homecryptoIntro.removeAttribute("hidden")
-//   homecryptoIntro.style.display ="flex"
-// })
 
 //Click event for the crypto list
 cryptolistLink.addEventListener('click', () => {
