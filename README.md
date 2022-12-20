@@ -29,14 +29,16 @@
 * The countries listed will help the user what there regions best exchange is.
 * BUG WARNING(If the link for Exchanges at the top isn't working the number of times to generate has exceded the number allowed)
 
-## BLOCKCHAIN - SEARCH BAR
+### BLOCKCHAIN - SEARCH BAR
 * When you click on search you will generate the blockchain systems id and name. This shows the areas in which the systems that run the cryptocurrencies .
 * The images generated show the three best coins under each blockchain ecosystem.
 * For some of the blockchains generated there is content generated which gives you brief details on what you need to know about the blockchain.
 * There others even the best of best still don't understand some of the blockchains due to new ones coming up day by day.
 * BUG WARNING(If the search  isn't working the number of times to generate has exceded the number allowed)
 
-## 
+#### BUGS
+* When the links aren't responding reload the page to return it back to normal.
+
 
 
 
