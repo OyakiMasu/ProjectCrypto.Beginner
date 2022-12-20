@@ -42,8 +42,12 @@
 * When the links aren't responding reload the page to return it back to normal.
 
 ### AUTHOR
- This project was contributed by :
+* This project was contributed by :
    * ZAKI MATHU
+
+### LICENSE
+* This project is licensed under MIT License
+
 
 
 
