@@ -10881,8 +10881,19 @@ textarea.form-control-lg {
 .block-img{
   max-width: 25%;
   height: auto;
+  
 
 }
 .ex-img{
   max-width: 25%;
 }
+
+body{
+   background-color: beige;
+   text-align: left;
+   font-family: 'Courier New', Courier, monospace;
+
+}  
+
+
+ 
